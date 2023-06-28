@@ -23,9 +23,22 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/plugins/fontawesome-free/css/all.min.css",
-              "assets/plugins/fontawesome-free/css/all.min.css"
+              "src/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
+              "src/assets/dist/css/adminlte.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/plugins/jquery/jquery.min.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js",
+              "src/assets/dist/js/adminlte.js",
+              "src/assets/plugins/jquery-mousewheel/jquery.mousewheel.js",
+              "src/assets/plugins/raphael/raphael.min.js",
+              "src/assets/plugins/jquery-mapael/jquery.mapael.min.js",
+              "src/assets/plugins/jquery-mapael/maps/usa_states.min.js",
+              "src/assets/plugins/chart.js/Chart.min.js",
+              "src/assets/dist/js/demo.js",
+              "src/assets/dist/js/pages/dashboard2.js"
+            ]
           },
           "configurations": {
             "production": {
