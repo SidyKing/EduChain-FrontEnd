@@ -1,4 +1,3 @@
-import {AnneeScolaire} from "./annee-scolaire";
 import {InfosPersonnelles} from "../gestion-utilisateurs/infos-personnelles";
 import {Formation} from "../gestion-formations/formation";
 import {NIVEAU} from "./niveau";
@@ -9,5 +8,5 @@ export interface Inscription {
   infosPersonnelles: InfosPersonnelles;
   formation: Formation;
   niveau: NIVEAU;
-  anneeScolaire: AnneeScolaire;
+  anneeScolaire: number;
 }

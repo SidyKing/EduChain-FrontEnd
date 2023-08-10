@@ -1,0 +1,137 @@
+<h2 mat-dialog-title>Année Scolaire 2022-2023</h2>
+
+<mat-dialog-content>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Avatar List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item routerLink="">
+          <h3 matListItemTitle>L1</h3>
+        </mat-list-item>
+        <mat-list-item >
+          <h3 matListItemTitle>L2</h3>
+        </mat-list-item>
+        <mat-list-item >
+          <h3 matListItemTitle>L3</h3>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-accordion class="example-headers-align" multi>
+
+    <mat-expansion-panel>
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>L1</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <table mat-table matSort [dataSource]="dataSource"
+            class="table-container">
+        <!-- Colonne Formation -->
+        <ng-container matColumnDef="formation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > Formation </th>
+          <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="onClickRow(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+
+
+    </mat-expansion-panel>
+
+
+
+    <mat-expansion-panel>
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>L2</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <table mat-table [dataSource]="dataSource" matSort
+             class="table-container">
+        <!-- Colonne Formation -->
+        <ng-container matColumnDef="formation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > Formation </th>
+          <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>L3</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Colonne Formation -->
+        <ng-container matColumnDef="formation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > Formation </th>
+          <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>M1</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Colonne Formation -->
+        <ng-container matColumnDef="formation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > Formation </th>
+          <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>M2</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Colonne Formation -->
+        <ng-container matColumnDef="formation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header > Formation </th>
+          <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+</mat-dialog-content>
+
+<!--<mat-dialog-actions>-->
+<!--  <button mat-raised-button color="primary" mat-dialog-close>Fermer</button>-->
+<!--</mat-dialog-actions>-->

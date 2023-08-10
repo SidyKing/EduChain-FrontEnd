@@ -2,7 +2,7 @@ export interface InfosPersonnelles {
   id?: number;
   nom: string;
   prenom: string;
-  telephone: string;
+  sexe: string;
   dateNaissance: Date;
   lieuNaissance: string;
 }

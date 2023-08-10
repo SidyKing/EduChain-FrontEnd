@@ -1,0 +1,44 @@
+<breadcrumb></breadcrumb>
+<mat-card>
+  <mat-card-content>
+    <section>
+      <h2>Demandes d'inscriptions {{niveau |titlecase}} {{formation |titlecase}}</h2>
+
+<!--      <mat-table [dataSource]="datasource"-->
+<!--                 aria-label="Users favorite colors and age"-->
+<!--                 aria-readonly="true"-->
+<!--                 matSort matSortActive="age"-->
+<!--                 matSortDirection="asc">-->
+
+<!--        <ng-container cdkColumnDef="prenom">-->
+<!--          <mat-header-cell *cdkHeaderCellDef mat-sort-header>Prenom</mat-header-cell>-->
+<!--          <mat-cell *cdkCellDef="let row;">{{row.prenom}}</mat-cell>-->
+<!--        </ng-container>-->
+
+<!--        <ng-container cdkColumnDef="nom">-->
+<!--          <mat-header-cell *cdkHeaderCellDef mat-sort-header>Nom</mat-header-cell>-->
+<!--          <mat-cell *cdkCellDef="let row;">{{row.nom}}</mat-cell>-->
+<!--        </ng-container>-->
+
+<!--        <ng-container cdkColumnDef="sexe">-->
+<!--          <mat-header-cell *cdkHeaderCellDef>Sexe</mat-header-cell>-->
+<!--          <mat-cell *cdkCellDef="let row;">{{row.sexe}}</mat-cell>-->
+<!--        </ng-container>-->
+
+<!--        <ng-container cdkColumnDef="dateDemande">-->
+<!--          <mat-header-cell *cdkHeaderCellDef>Date de demande</mat-header-cell>-->
+<!--          <mat-cell *cdkCellDef="let row;">{{row.dateDemande | date}}</mat-cell>-->
+<!--        </ng-container>-->
+
+<!--        <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>-->
+<!--        <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>-->
+
+<!--      </mat-table>-->
+      <mtx-grid [data]="data"
+                [columns]="columns" [rowHover]="rowHover" [rowStriped]="rowStriped" (rowClick)="onRowClick($event)">
+      </mtx-grid>
+
+    </section>
+  </mat-card-content>
+
+</mat-card>

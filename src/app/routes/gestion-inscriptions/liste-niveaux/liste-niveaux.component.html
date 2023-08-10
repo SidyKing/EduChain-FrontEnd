@@ -1,0 +1,35 @@
+<mat-card class="col-sm-12 col-md-6">
+
+  <mat-card-content>
+
+    <h2>Niveax d'étude -- 2022-2023</h2>
+
+    <section>
+      <mat-accordion>
+
+        <mat-expansion-panel (opened)="getListeNiveauxByCycle(cycle.nom)" *ngFor="let cycle of cycles">
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{cycle.nom}}</mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <table [dataSource]="niveaux" mat-table>
+            <!-- Colonne Formation -->
+            <ng-container matColumnDef="nom">
+              <th *matHeaderCellDef mat-header-cell> Niveaux</th>
+              <td *matCellDef="let element" mat-cell> {{element.nom}} </td>
+            </ng-container>
+
+            <tr *matHeaderRowDef="colonnes" mat-header-row></tr>
+            <tr *matRowDef="let row; columns: colonnes;" mat-row
+                routerLink={{row.link}}></tr>
+
+          </table>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </section>
+  </mat-card-content>
+</mat-card>
+
