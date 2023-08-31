@@ -6,15 +6,16 @@ import { SimpleToken, JwtToken, BaseToken } from './token';
   providedIn: 'root',
 })
 export class TokenFactory {
-  create(attributes: Token): BaseToken | undefined {
-    if (!attributes.access_token) {
+  create(attributes: Token): JwtToken | undefined {
+    if (!attributes.token) {
       return undefined;
     }
 
-    if (JwtToken.is(attributes.access_token)) {
-      return new JwtToken(attributes);
-    }
+    // if (JwtToken.is(attributes.token)) {
+    //   return new JwtToken(attributes);
+    // }
 
-    return new SimpleToken(attributes);
+    // return new SimpleToken(attributes);
+    return new JwtToken(attributes);
   }
 }

@@ -24,7 +24,7 @@
                  (openedChange)="onSidenavOpenedChange($event)"
                  (closedStart)="onSidenavClosedStart()">
       <app-sidebar [showToggle]="!isOver"
-                   [showUser]="!!options.showUserPanel"
+                   [showUser]="options.showUserPanel"
                    [showHeader]="options.headerPos !== 'above'"
                    (toggleCollapsed)="toggleCollapsed()"
                    [toggleChecked]="!!options.sidenavCollapsed">
@@ -36,12 +36,12 @@
     </mat-sidenav>
 
     <mat-sidenav-content #content class="matero-content-wrap">
-      <app-header *ngIf="options.showHeader && options.headerPos !== 'above'"
-                  [showToggle]="!options.sidenavCollapsed && options.navPos !== 'top'"
-                  [showBranding]="options.navPos === 'top'"
-                  (toggleSidenav)="sidenav.toggle()"
-                  (toggleSidenavNotice)="sidenavNotice.toggle()">
-      </app-header>
+<!--      <app-header *ngIf="options.showHeader && options.headerPos !== 'above'"-->
+<!--                  [showToggle]="!options.sidenavCollapsed && options.navPos !== 'top'"-->
+<!--                  [showBranding]="options.navPos === 'top'"-->
+<!--                  (toggleSidenav)="sidenav.toggle()"-->
+<!--                  (toggleSidenavNotice)="sidenavNotice.toggle()">-->
+<!--      </app-header>-->
 
       <app-topmenu *ngIf="options.navPos === 'top'"></app-topmenu>
 

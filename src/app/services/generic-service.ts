@@ -81,7 +81,7 @@ export class GenericService {
      */
     handleError<T>(operation = 'operation', result?: typeof this.T) {
         return (error: any): Observable<typeof this.T> => {
-            let errorMessage ;
+            let errorMessage;
             if (error.error instanceof ErrorEvent) {
                 // client-side error
                 errorMessage = `Error: ${error.error.message}`;

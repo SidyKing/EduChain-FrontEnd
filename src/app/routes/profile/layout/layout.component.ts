@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, User } from '@core/authentication';
+import { AuthService } from '@core/authentication';
+import {Utilisateur} from "../../../models/gestion-utilisateurs/utilisateur";
 
 @Component({
   selector: 'app-profile-layout',
@@ -7,7 +8,7 @@ import { AuthService, User } from '@core/authentication';
   styleUrls: ['./layout.component.scss'],
 })
 export class ProfileLayoutComponent implements OnInit {
-  user!: User;
+  user!: Utilisateur;
 
   constructor(private auth: AuthService) {}
 

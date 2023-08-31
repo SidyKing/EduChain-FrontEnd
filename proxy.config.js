@@ -17,6 +17,15 @@ const PROXY_CONFIG = {
     //   proxyReq.setHeader('cookie', cookie);
     // },
   },
+  "/api/*": {
+    target: "https://educhain-backend.azurewebsites.net/api/",
+    secure: false,
+    logLevel: "debug",
+    pathRewrite: {
+        "^/api": ""
+    },
+    changeOrigin: false,
+  }
 };
 
 module.exports = PROXY_CONFIG;

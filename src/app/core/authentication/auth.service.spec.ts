@@ -14,7 +14,7 @@ describe('AuthService', () => {
   let httpMock: HttpTestingController;
   let user$: Observable<User>;
   const email = 'foo@bar.com';
-  const token = { access_token: 'token', token_type: 'bearer' };
+  const token = { token: 'token', token_type: 'bearer' };
   const user = { id: 1, email };
 
   beforeEach(() => {

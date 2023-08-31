@@ -4,20 +4,22 @@ import { catchError, map, share, switchMap, tap } from 'rxjs/operators';
 import { TokenService } from './token.service';
 import { LoginService } from './login.service';
 import { filterObject, isEmptyObject } from './helpers';
-import { User } from './interface';
+import {Utilisateur} from "../../models/gestion-utilisateurs/utilisateur";
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private user$ = new BehaviorSubject<User>({});
+
+  private user$ = new BehaviorSubject<Utilisateur>({});
+
   private change$ = merge(
     this.tokenService.change(),
     this.tokenService.refresh()
         .pipe(switchMap(() => this.refresh()))
   ).pipe(
-    switchMap(() => this.assignUser()),
-    share()
+      switchMap(() => this.assignUser()),
+      share()
   );
 
   constructor(private loginService: LoginService, private tokenService: TokenService) {}
@@ -37,7 +39,16 @@ export class AuthService {
   login(username: string, password: string, rememberMe = false) {
     return this.loginService.login(username, password, rememberMe)
         .pipe(
-            tap(token => this.tokenService.set(token)),
+            tap(token => {
+              this.tokenService.set(token);
+
+              this.loginService.me().pipe(tap(user => this.user$.next(user)))
+
+              // console.log('token', token);
+              // console.log('payload', jwtToken.payload);
+              // console.log('profil', this.tokenService.profil);
+              // console.log('userID', this.tokenService.userID);
+            }),
             map(() => this.check())
         );
   }

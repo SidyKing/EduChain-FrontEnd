@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService, User } from '@core/authentication';
+import {Utilisateur} from "../../models/gestion-utilisateurs/utilisateur";
 
 @Component({
   selector: 'app-user-panel',
   template: `
     <div class="matero-user-panel">
-      <img class="matero-user-panel-avatar" [src]="user.avatar" alt="avatar" width="64" />
-      <h4 class="matero-user-panel-name">{{ user.name }}</h4>
+      <img class="matero-user-panel-avatar" [src]="user.avatar" alt="avatar" width="64"/>
+      <h4 class="matero-user-panel-name">{{ user.infosPersonnelles?.nom }}</h4>
       <h5 class="matero-user-panel-email">{{ user.email }}</h5>
       <div class="matero-user-panel-icons">
         <button mat-icon-button routerLink="/profile/overview">
@@ -26,7 +27,7 @@ import { AuthService, User } from '@core/authentication';
   encapsulation: ViewEncapsulation.None,
 })
 export class UserPanelComponent implements OnInit {
-  user!: User;
+  user!: Utilisateur;
 
   constructor(private router: Router, private auth: AuthService) {}
 

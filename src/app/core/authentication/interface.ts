@@ -1,3 +1,5 @@
+import {ROLE} from "../../models/gestion-utilisateurs/role";
+
 export interface User {
   [prop: string]: any;
 
@@ -5,14 +7,14 @@ export interface User {
   name?: string;
   email?: string;
   avatar?: string;
-  roles?: any[];
+  roles?: ROLE[];
   permissions?: any[];
 }
 
 export interface Token {
   [prop: string]: any;
 
-  access_token: string;
+  token: string;
   token_type?: string;
   expires_in?: number;
   exp?: number;

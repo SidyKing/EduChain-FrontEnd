@@ -1,11 +1,12 @@
 import { base64, capitalize, currentTimestamp, timeLeft } from './helpers';
 import { Token } from './interface';
+import {Profil} from "../../models/gestion-utilisateurs/profil";
 
 export abstract class BaseToken {
   constructor(protected attributes: Token) {}
 
-  get access_token(): string {
-    return this.attributes.access_token;
+  get token(): string {
+    return this.attributes.token;
   }
 
   get refresh_token(): string | void {
@@ -25,8 +26,8 @@ export abstract class BaseToken {
   }
 
   getBearerToken(): string {
-    return this.access_token
-      ? [capitalize(this.token_type), this.access_token].join(' ').trim()
+    return this.token
+      ? [capitalize(this.token_type), this.token].join(' ').trim()
       : '';
   }
 
@@ -39,7 +40,7 @@ export abstract class BaseToken {
   }
 
   private hasAccessToken(): boolean {
-    return !!this.access_token;
+    return !!this.token;
   }
 
   private isExpired(): boolean {
@@ -50,7 +51,12 @@ export abstract class BaseToken {
 export class SimpleToken extends BaseToken {}
 
 export class JwtToken extends SimpleToken {
-  private _payload?: { exp?: number | void };
+  private _payload?: {
+    exp?: number | void,
+    profil?: Profil[],
+    sub?: string,
+    userID?: number,
+  };
 
   static is(accessToken: string): boolean {
     try {
@@ -67,8 +73,25 @@ export class JwtToken extends SimpleToken {
     return this.payload?.exp;
   }
 
-  private get payload(): { exp?: number | void } {
-    if (!this.access_token) {
+  get userID(): number | void {
+    return this.payload?.userID;
+  }
+
+  get profil(): Profil[] {
+    return this.payload?.profil ?? [];
+  }
+
+  get sub(): string | void {
+    return this._payload?.sub
+  }
+
+  get payload(): {
+    exp?: number | void,
+    profil?: Profil[],
+    sub?: string,
+    userID?: number,
+  } {
+    if (!this.token) {
       return {};
     }
 
@@ -76,7 +99,7 @@ export class JwtToken extends SimpleToken {
       return this._payload;
     }
 
-    const [, payload] = this.access_token.split('.');
+    const [, payload] = this.token.split('.');
     const data = JSON.parse(base64.decode(payload));
     if (!data.exp) {
       data.exp = this.attributes.exp;
