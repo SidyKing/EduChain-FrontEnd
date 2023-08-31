@@ -3,9 +3,8 @@ import {BehaviorSubject, Observable, Subject, Subscription, timer} from 'rxjs';
 import {share} from 'rxjs/operators';
 import {LocalStorageService} from '@shared';
 import {Token} from './interface';
-import {BaseToken, JwtToken} from './token';
+import { JwtToken} from './token';
 import {TokenFactory} from './token-factory.service';
-import {currentTimestamp, filterObject} from './helpers';
 import {Profil} from "../../models/gestion-utilisateurs/profil";
 
 @Injectable({

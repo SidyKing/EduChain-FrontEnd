@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Token } from './interface';
-import { SimpleToken, JwtToken, BaseToken } from './token';
+import { JwtToken } from './token';
 
 @Injectable({
   providedIn: 'root',
