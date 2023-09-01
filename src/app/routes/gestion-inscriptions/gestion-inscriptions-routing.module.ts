@@ -10,15 +10,15 @@ import { GestionInscriptionsListeModulesComponent } from './liste-modules/liste-
 
 const routes: Routes = [
   { path: 'inscriptions', component: GestionInscriptionsInscriptionsComponent },
-  { path: 'inscriptions/:annee', component: GestionInscriptionsListeNiveauxComponent },
-  { path: 'inscriptions/:annee/:niveau', component: GestionInscriptionsListeFormationsComponent },
-  { path: 'inscriptions/:annee/:niveau/:formation', component: GestionInscriptionsListeModulesComponent },
-  { path: 'inscriptions/:annee/:niveau/:formation/:module',component: GestionInscriptionsListeInscriptionsComponent },
+  { path: 'inscriptions/:idAnnee', component: GestionInscriptionsListeNiveauxComponent },
+  { path: 'inscriptions/:idAnnee/:idNiveau', component: GestionInscriptionsListeFormationsComponent },
+  { path: 'inscriptions/:idAnnee/:idNiveau/:idFormation', component: GestionInscriptionsListeModulesComponent },
+  { path: 'inscriptions/:idAnnee/:idNiveau/:idFormation/:idModule',component: GestionInscriptionsListeInscriptionsComponent },
 
   { path: 'demandes', component: GestionInscriptionsDemandesComponent },
-  { path: 'demandes/:annee', component: GestionInscriptionsListeNiveauxComponent },
-  { path: 'demandes/:annee/:niveau', component: GestionInscriptionsListeFormationsComponent },
-  { path: 'demandes/:annee/:niveau/:formation', component: GestionInscriptionsListeDemandesComponent },
+  { path: 'demandes/:idAnnee', component: GestionInscriptionsListeNiveauxComponent },
+  { path: 'demandes/:idAnnee/:idNiveau', component: GestionInscriptionsListeFormationsComponent },
+  { path: 'demandes/:idAnnee/:idNiveau/:idFormation', component: GestionInscriptionsListeDemandesComponent },
 
 
 

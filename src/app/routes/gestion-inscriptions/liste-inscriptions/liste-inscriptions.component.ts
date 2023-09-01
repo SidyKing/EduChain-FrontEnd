@@ -11,10 +11,14 @@ import {MtxGridColumn} from "@ng-matero/extensions/grid";
 })
 export class GestionInscriptionsListeInscriptionsComponent implements OnInit {
 
-    annee = 0;
-    niveau = '';
-    formation = '';
-    module= '';
+    idAnnee!: number;
+    annee!: number;
+    idNiveau!: number;
+    niveau!: string;
+    idFormation!: number;
+    formation!: string;
+    idModule!: number;
+    module!: string;
 
     displayedColumns = ['nom', 'prenom', 'sexe', 'dateInscription'];
 
@@ -84,21 +88,25 @@ export class GestionInscriptionsListeInscriptionsComponent implements OnInit {
     ];
 
     rowSelectable = true;
-    multiSelectable= true;
-    multiSelectionWithClick= true;
+    multiSelectable = true;
+    multiSelectionWithClick = true;
     rowSelected: any[] = [];
     rows: any[] = [];
 
 
-
-    constructor(private route: ActivatedRoute) {}
+    constructor(private route: ActivatedRoute) {
+    }
 
     ngOnInit() {
         this.route.params.subscribe(params => {
-            this.annee = params.annee;
-            this.niveau = params.niveau;
-            this.formation = params.formation;
-            this.module = params.module;
+            this.idAnnee = params.idAnnee;
+            this.idNiveau = params.idNiveau;
+            this.idFormation = params.idFormation;
+            this.idModule = params.idModule;
+            this.annee = 2000;
+            this.niveau = "Licence";
+            this.formation = "Developpement et Administration d'Applications";
+            this.module = "Module 1";
         });
     }
 
@@ -116,14 +124,15 @@ export class GestionInscriptionsListeInscriptionsComponent implements OnInit {
 
     }
 
-    onRowSelectChange(row: any) {
-        console.log(this.rows);
-    }
+    // onRowSelectChange(row: any) {
+    //     console.log(this.rows);
+    // }
 
     rowSelectionChange(e: any) {
-        console.log(e);
+        console.log(`onRowSelectChange`);
         this.rows = [];
         this.rows = e;
+        console.log(`this.rows : `, );
         console.log(this.rows);
 
     }

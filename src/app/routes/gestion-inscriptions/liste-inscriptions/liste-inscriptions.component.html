@@ -1,41 +1,9 @@
-<breadcrumb></breadcrumb>
-<mat-card>
+<div class="mat-h3">2022 - 2023 / {{niveau}} / {{formation}} / {{module}}</div>
+
+<mat-card class="m-8">
   <mat-card-content>
     <section>
       <h2>Module {{module |titlecase}}</h2>
-      <h3>{{niveau |titlecase}} {{formation |titlecase}}</h3>
-
-<!--      <mat-table [dataSource]="datasource"-->
-<!--                 aria-label="Users favorite colors and age"-->
-<!--                 aria-readonly="true"-->
-<!--                 matSort matSortActive="age"-->
-<!--                 matSortDirection="asc">-->
-
-<!--        <ng-container cdkColumnDef="prenom">-->
-<!--          <mat-header-cell *cdkHeaderCellDef mat-sort-header>Prenom</mat-header-cell>-->
-<!--          <mat-cell *cdkCellDef="let row;">{{row.prenom}}</mat-cell>-->
-<!--        </ng-container>-->
-
-<!--        <ng-container cdkColumnDef="nom">-->
-<!--          <mat-header-cell *cdkHeaderCellDef mat-sort-header>Nom</mat-header-cell>-->
-<!--          <mat-cell *cdkCellDef="let row;">{{row.nom}}</mat-cell>-->
-<!--        </ng-container>-->
-
-<!--        <ng-container cdkColumnDef="sexe">-->
-<!--          <mat-header-cell *cdkHeaderCellDef>Sexe</mat-header-cell>-->
-<!--          <mat-cell *cdkCellDef="let row;">{{row.sexe}}</mat-cell>-->
-<!--        </ng-container>-->
-
-<!--        <ng-container cdkColumnDef="dateInscription">-->
-<!--          <mat-header-cell *cdkHeaderCellDef>Date d'inscription</mat-header-cell>-->
-<!--          <mat-cell *cdkCellDef="let row;">{{row.dateInscription | date}}</mat-cell>-->
-<!--        </ng-container>-->
-
-<!--        <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>-->
-<!--        <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>-->
-
-<!--      </mat-table>-->
-
 
 
       <mtx-grid [data]="data"
@@ -52,8 +20,8 @@
       </ng-template>
 
         <div class="actions">
-            <button mat-raised-button color="primary" (click)="validate()">Valider</button>
-            <button mat-raised-button color="warn" (click)="unvalidate()">Invalider</button>
+            <button class="m-4" mat-raised-button color="primary" (click)="validate()">Valider</button>
+            <button class="m-4" mat-raised-button color="warn" (click)="unvalidate()">Invalider</button>
         </div>
     </section>
   </mat-card-content>

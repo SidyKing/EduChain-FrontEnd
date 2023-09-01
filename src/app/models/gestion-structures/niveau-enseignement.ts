@@ -1,5 +1,5 @@
 export enum NIVEAU_ENSEIGNEMENT {
-  PRIMAIRE = 'Primaire',
-  SECONDAIRE = 'Secondaire',
-  SUPERIEUR = 'Supérieur',
+  PRIMAIRE = 'PRIMAIRE',
+  SECONDAIRE = 'SECONDAIRE',
+  SUPERIEUR = 'SUPERIEUR',
 }

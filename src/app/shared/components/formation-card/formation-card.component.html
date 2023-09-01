@@ -1,0 +1,21 @@
+<div>
+    <mat-card class="text-white bg-blue-500 example-ripple-container"
+              matRipple [matRippleCentered]="centered" [matRippleDisabled]="disabled"
+              [matRippleUnbounded]="unbounded"
+              routerLink="{{formation.id}}">
+
+        <mat-card-content>
+            <h3 class="m-y-8">{{formation.nom}}</h3>
+
+            <mtx-progress *ngIf="withProgress" [value]="progressValue"
+                          background='rgba(0,0,0,0.5)'
+                          foreground="rgba(255,255,255,1)"
+                          height="4px">
+            </mtx-progress>
+
+            <small class="text-muted"> 20 Modules </small>
+
+        </mat-card-content>
+    </mat-card>
+
+</div>

@@ -1,6 +1,5 @@
 export enum NIVEAU_ETUDES {
-  LICENCE = 'Licence',
-  MASTER = 'Master',
-
-
+    LICENCE = "LICENCE",
+    MASTER = "MASTER",
+    DOCTORAT = "DOCTORAT",
 }

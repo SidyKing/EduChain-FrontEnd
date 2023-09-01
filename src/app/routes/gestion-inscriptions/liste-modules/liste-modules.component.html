@@ -1,20 +1,27 @@
-<mat-card>
+<div class="mat-h3">2022 - 2023 / {{niveau}} / {{formation}}</div>
+
+<mat-card class="m-8">
+
     <mat-card-content>
         <section>
 
             <h2> Liste des modules</h2>
-            <h3> {{niveau |titlecase}} - {{formation}}</h3>
 
             <div class="row">
 
-                <div *ngFor="let module of modules" class="col-sm-6 col-md-3">
-                    <mat-card class="bg-blue-500 text-white"
-                              routerLink="{{module.slug}}">
-                        <mat-card-content>
-                            <h2 class="">{{module.nom}}</h2>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
+<!--                <div *ngFor="let module of modules" class="col-sm-6 col-md-3">-->
+<!--                    <mat-card class="bg-blue-500 text-white"-->
+<!--                              routerLink="{{module.id}}">-->
+<!--                        <mat-card-content>-->
+<!--                            <h2 class="">{{module.nom}}</h2>-->
+<!--                        </mat-card-content>-->
+<!--                    </mat-card>-->
+<!--                </div>-->
+                <app-module-card class="col-sm-6 col-md-3"
+                                 *ngFor="let module of modules"
+                                 [module]="module">
+                </app-module-card>
+
             </div>
         </section>
     </mat-card-content>

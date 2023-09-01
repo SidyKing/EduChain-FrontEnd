@@ -9,5 +9,5 @@ export interface Structure {
   id?: number;
   nom: string;
   adresse: string;
-  type: TYPE_STRUCTURE;
+  type?: TYPE_STRUCTURE;
 }

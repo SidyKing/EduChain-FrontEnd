@@ -14,7 +14,5 @@ export class AnneeScolaireCardComponent {
   disabled = false;
   unbounded = false;
 
-  radius!: number;
-  color!: string;
     constructor() { }
 }

@@ -1,35 +1,36 @@
-<mat-card class="col-sm-12 col-md-6">
+<div class="mat-h3">2022 - 2023 </div>
 
-  <mat-card-content>
+<mat-card class="col-sm-12 col-md-12 m-8">
 
-    <h2>Niveax d'étude -- 2022-2023</h2>
+    <mat-card-content>
 
-    <section>
-      <mat-accordion>
+        <h2>Niveaux d'étude</h2>
 
-        <mat-expansion-panel (opened)="getListeNiveauxByCycle(cycle.nom)" *ngFor="let cycle of cycles">
+        <section>
+            <mat-accordion>
 
-          <mat-expansion-panel-header>
-            <mat-panel-title>{{cycle.nom}}</mat-panel-title>
-          </mat-expansion-panel-header>
+                <mat-expansion-panel *ngFor="let cycle of cycles" (opened)="getListeNiveauxByCycle(cycle.nom)">
 
-          <table [dataSource]="niveaux" mat-table>
-            <!-- Colonne Formation -->
-            <ng-container matColumnDef="nom">
-              <th *matHeaderCellDef mat-header-cell> Niveaux</th>
-              <td *matCellDef="let element" mat-cell> {{element.nom}} </td>
-            </ng-container>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>{{cycle.nom}}</mat-panel-title>
+                    </mat-expansion-panel-header>
 
-            <tr *matHeaderRowDef="colonnes" mat-header-row></tr>
-            <tr *matRowDef="let row; columns: colonnes;" mat-row
-                routerLink={{row.link}}></tr>
+                    <table [dataSource]="niveaux" mat-table>
 
-          </table>
+                        <ng-container matColumnDef="nom">
+                            <th *matHeaderCellDef mat-header-cell> Niveaux</th>
+                            <td *matCellDef="let element" mat-cell> {{element.nom}} </td>
+                        </ng-container>
 
-        </mat-expansion-panel>
+                        <tr *matHeaderRowDef="colonnes" mat-header-row></tr>
+                        <tr *matRowDef="let row; columns: colonnes;" mat-row routerLink={{row.link}}></tr>
 
-      </mat-accordion>
-    </section>
-  </mat-card-content>
+                    </table>
+
+                </mat-expansion-panel>
+
+            </mat-accordion>
+        </section>
+    </mat-card-content>
 </mat-card>
 

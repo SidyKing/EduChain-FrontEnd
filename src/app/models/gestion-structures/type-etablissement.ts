@@ -1,4 +1,4 @@
 export enum TYPE_ETABLISSEMENT {
-  PUBLIC = 'Public',
-  PRIVE = 'Privé',
+  PUBLIC = "PUBLIC",
+  PRIVE = "PRIVE",
 }
