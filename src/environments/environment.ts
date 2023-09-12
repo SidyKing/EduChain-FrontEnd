@@ -7,8 +7,8 @@ export const environment = {
   baseUrl: '',
   useHash: false,
   // apiUrl: 'http://localhost:8083/api',
-  // apiUrl: '/api',
-  apiUrl: 'https://educhain-backend.azurewebsites.net/api',
+  apiUrl: '/api',
+  // apiUrl: 'https://educhain-backend.azurewebsites.net/api',
 };
 
 /*

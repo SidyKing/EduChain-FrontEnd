@@ -1,22 +1,19 @@
-// https://angular.io/guide/build#proxying-to-a-backend-server
-
 {
-    "/users/**": {
-        "target": "https://api.github.com",
-        "changeOrigin": true,
-        "secure": false,
-        "logLevel": "debug",
-
-    },
-    "/api/**": {
-        "target": "https://educhain-backend.azurewebsites.net/api",
-        "secure": false,
-        "logLevel": "debug",
-        "pathRewrite": {
-            "^/api": ""
-        },
-        "changeOrigin": true,
+  "/users/**": {
+    "target": "https://api.github.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/api": {
+    "target": "https://educhain-backend.azurewebsites.net/api",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
     }
+  }
 }
 
 
