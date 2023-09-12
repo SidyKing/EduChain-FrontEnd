@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AnneeScolaire} from "../../../models/gestion-inscriptions/annee-scolaire";
+import {AnneeScolaireService} from "../../../services/gestion-inscriptions/annee-scolaire.service";
+import {Observable} from "rxjs";
 
 @Component({
     selector: 'app-gestion-inscriptions-inscriptions',
@@ -8,35 +10,22 @@ import {AnneeScolaire} from "../../../models/gestion-inscriptions/annee-scolaire
 })
 export class GestionInscriptionsInscriptionsComponent implements OnInit {
 
-    anneesScolaires: AnneeScolaire[] = [
-        {
-            id: 4,
-            annee: 2022,
-            debut: new Date(2022, 8, 1),
-            fin: new Date(2023, 7, 31)
-        },
-        {
-            id: 3,
-            annee: 2021,
-            debut: new Date(2021, 8, 1),
-            fin: new Date(2022, 7, 31)
-        },
-        {
-            id: 2,
-            annee: 2020,
-            debut: new Date(2020, 8, 1),
-            fin: new Date(2021, 7, 31)
-        },
-        {
-            id: 1,
-            annee: 2019,
-            debut: new Date(2019, 8, 1),
-            fin: new Date(2020, 7, 31)
-        },
-    ];
+    anneesScolaires!: AnneeScolaire[];
 
-    constructor() {}
 
-    ngOnInit() {}
+    constructor(private anneeScolaireService :AnneeScolaireService) {}
+
+    ngOnInit() {
+        this.anneeScolaireService.getAll().subscribe(
+            data => {
+                this.anneesScolaires = data;
+                console.log(data);
+            }
+        );
+    }
+
+    trackById(index: number, item: AnneeScolaire) {
+        return item.id;
+    }
 
 }
