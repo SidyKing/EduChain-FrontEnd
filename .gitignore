@@ -50,3 +50,6 @@ speed-measure-plugin*.json
 
 # IDEs and editors
 /.idea
+
+
+.env
