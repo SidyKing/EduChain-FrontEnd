@@ -78,7 +78,7 @@ export class GestionInscriptionsListeFormationsComponent implements OnInit {
             this.idAnnee = Number(params.idAnnee);
             this.idNiveau = Number(params.idNiveau);
             this.annee = 2000;
-            this.niveau = "Licence";
+            this.niveau = "Licence 1";
         });
 
     }

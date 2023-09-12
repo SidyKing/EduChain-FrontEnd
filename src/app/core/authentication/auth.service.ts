@@ -41,13 +41,6 @@ export class AuthService {
         .pipe(
             tap(token => {
               this.tokenService.set(token);
-
-              this.loginService.me().pipe(tap(user => this.user$.next(user)))
-
-              // console.log('token', token);
-              // console.log('payload', jwtToken.payload);
-              // console.log('profil', this.tokenService.profil);
-              // console.log('userID', this.tokenService.userID);
             }),
             map(() => this.check())
         );

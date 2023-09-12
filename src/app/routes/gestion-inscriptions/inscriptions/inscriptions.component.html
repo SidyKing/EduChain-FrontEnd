@@ -7,26 +7,9 @@
             <div class="row">
 
                 <app-annee-scolaire-card class="col-sm-6 col-md-3"
-                                         *ngFor="let anneeScolaire of anneesScolaires"
+                                         *ngFor="let anneeScolaire of anneesScolaires trackBy: trackById"
                                          [anneeScolaire]="anneeScolaire">
                 </app-annee-scolaire-card>
-
-<!--                            <div class="col-sm-6 col-md-3"-->
-<!--                                 *ngFor="let anneeScolaire of anneesScolaires">-->
-
-<!--                              <mat-card class="text-white bg-indigo-500"-->
-<!--                                        routerLink="{{anneeScolaire.annee}}">-->
-<!--                                <mat-card-header>-->
-<!--                                  <mat-card-subtitle class="text-white">{{anneeScolaire.annee}} - {{anneeScolaire.annee + 1}}</mat-card-subtitle>-->
-<!--                                </mat-card-header>-->
-<!--                                <mat-card-content>-->
-<!--                                  <h2 class="m-y-8">5000</h2>-->
-<!--                                  <small class="text-muted">Inscrits</small>-->
-<!--                                </mat-card-content>-->
-<!--                              </mat-card>-->
-
-<!--                            </div>-->
-
 
             </div>
 
